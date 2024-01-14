@@ -6,7 +6,7 @@ import './css/style.css';
 import Head from 'next/head';
 
 export const metadata = {
-    title: 'Construction Company',
+    title: 'Ozoh Engineering Company',
     description: 'Developed by TroyMoses',
 }
 

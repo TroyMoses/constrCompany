@@ -26,24 +26,24 @@ export default function HomePage() {
     return (
         <div className="h-screen w-screen my-3 mx-auto">
             <div className="header_section">
-                <div className="flex justify-center md:justify-between space-x-52 md:space-x-96 py-3 header_top text-xl">
-                    <div className="text-2xl">
-                        <a className="navbar-brand md:pl-20 text-4xl" href="index.html"> Tro<span>Weld</span> </a>
+                <div className="flex justify-center md:justify-between space-x-5 md:space-x-72 py-3 header_top text-xl">
+                    <div className="text-2xl md:ml-16">
+                        <Link className="navbar-brand md:pl-20 text-4xl flex-col" href="/"> <div className="text-6xl">OZOH</div> <span className="text-2xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
                     </div>
                     
                     <div className="social_box md:pr-24 space-x-3 md:space-x-5">
-                        <a href="">
+                        <Link href="www.facebook.com">
                             <i className="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
-                            <i className="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="">
+                        </Link>
+                        <Link href="www.whatsapp.com">
+                            <i className="fa fa-whatsapp" aria-hidden="true"></i>
+                        </Link>
+                        <Link href="www.instagram.com">
                             <i className="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
+                        </Link>
+                        <Link href="www.linkedin.com">
+                            <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -53,19 +53,19 @@ export default function HomePage() {
                         <div className="custom_nav-container navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav text-xl md:space-x-10">
                                 <li className="nav-item-active">
-                                    <a className="nav-link text-orange-500 hover:text-white" href="index.html">Home <span className="sr-only">(current)</span></a>
+                                    <Link className="nav-link text-orange-500 hover:text-white" href="/">Home <span className="sr-only">(current)</span></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link hover:text-orange-500" href="service.html">Services</a>
+                                    <Link className="nav-link hover:text-orange-500" href="/services">Services</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link hover:text-orange-500" href="about.html"> About</a>
+                                    <Link className="nav-link hover:text-orange-500" href="/about"> About</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link hover:text-orange-500" href="portfolio.html">Portfolio</a>
+                                    <Link className="nav-link hover:text-orange-500" href="/portfolio">Portfolio</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link hover:text-orange-500" href="contact.html">Contact Us</a>
+                                    <Link className="nav-link hover:text-orange-500" href="/contact">Contact Us</Link>
                                 </li>
                             </ul>
                         </div>
@@ -89,16 +89,16 @@ export default function HomePage() {
                                         Things Architects
                                     </p>
                                     <p className="text-white">
-                                        Dream Up
+                                        Dream About
                                     </p>
                                 </h1>
                                 <div className="btn-box justify-center">
-                                    <a href="" className="btn1">
+                                    <Link href="/services" className="btn1">
                                         Read More
-                                    </a>
-                                    <a href="" className="btn2">
+                                    </Link>
+                                    <Link href="/contact" className="btn2">
                                         Contact Us
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -111,29 +111,35 @@ export default function HomePage() {
             {/* about section  */}
             <section className="about_section layout_padding">
                 <div className="container  ">
-                <div className="row">
-                    <div className="col-md-6">
-                    <div className="detail-box">
-                        <div className="heading_container">
-                        <h2>Welcome to <span>Troweld</span></h2>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="detail-box pr-2">
+                                <div className="heading_container">
+                                <h2>Welcome to <span>Ozoh Engineering Company.</span></h2>
+                                </div>
+                                <p className=" text-lg">
+                                    We are a leading provider of comprehensive engineering solutions. 
+                                    Located in example, we specialize in a wide range of services included 
+                                    in the services section. 
+                                </p>
+                                <p className=" text-lg">
+                                    With our team of experienced professionals and state-of-the-art equipment, 
+                                    we deliver high-quality results and ensure utmost customer satisfaction. 
+                                    Our committment to excellence and attention to detail set us apart in the 
+                                    industry, as we strive to meet and exceed the unique needs of our clients.
+                                    
+                                </p>
+                                <Link className="text-lg" href="/services">
+                                    Read More
+                                </Link>
+                            </div>
                         </div>
-                        <p>
-                        Simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever
-                        since the 1500s, when an unknown printer took a galley of type
-                        and scrambled it to make a type specimen book. It has s
-                        </p>
-                        <a href="">
-                        Read More
-                        </a>
+                        <div className="col-md-6 ">
+                            <div className="img-box">
+                                <Image src={aboutImage} alt="" />
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                    <div className="col-md-6 ">
-                    <div className="img-box">
-                        <Image src={aboutImage} alt="" />
-                    </div>
-                    </div>
-                </div>
                 </div>
             </section>
             {/* end about section  */}
@@ -141,73 +147,111 @@ export default function HomePage() {
             {/* portfolio section */}
             <section className="portfolio_section ">
                 <div className="container">
-                <div className="heading_container heading_center">
-                    <h2>
-                    Our Work Portfolio
-                    </h2>
-                </div>
-                <div className="carousel-wrap ">
-                    <div className="filter_box">
-                    <nav className="owl-filter-bar">
-                        <a href="#" className="item active" data-owl-filter="*">All</a>
-                        <a href="#" className="item" data-owl-filter=".decorative">DECORATIVE</a>
-                        <a href="#" className="item" data-owl-filter=".facade">FACADES </a>
-                        <a href="#" className="item" data-owl-filter=".perforated">PERFORATED
-                        </a>
-                        <a href="#" className="item" data-owl-filter=".railing">RAILINGS </a>
-                    </nav>
+                    <div className="heading_container heading_center">
+                        <h2>
+                            Our Work Portfolio
+                        </h2>
                     </div>
                 </div>
-                </div>
-                <div className="owl-carousel portfolio_carousel">
-                <div className="item decorative">
-                    <div className="box">
-                    <div className="img-box">
-                        <Image src={p1Image} alt="" />
-                        <div className="btn_overlay">
-                        <a href="" className="">
-                            See More
-                        </a>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p1Image} alt="" />
+                                    <div className="btn_overlay">
+                                        <Link href="/portfolio" className="">
+                                            See More
+                                        </Link>
+                                    </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                <div className="item facade">
-                    <div className="box">
-                    <div className="img-box">
-                    <Image src={p2Image} alt="" />
-                        <div className="btn_overlay">
-                        <a href="" className="">
-                            See More
-                        </a>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p2Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                <div className="item perforated decorative">
-                    <div className="box">
-                    <div className="img-box">
-                    <Image src={p3Image} alt="" />
-                        <div className="btn_overlay">
-                        <a href="" className="">
-                            See More
-                        </a>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p3Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                <div className="item railing">
-                    <div className="box">
-                    <div className="img-box">
-                    <Image src={p1Image} alt="" />
-                        <div className="btn_overlay">
-                        <a href="" className="">
-                            See More
-                        </a>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p1Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
                 </div>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p1Image} alt="" />
+                                    <div className="btn_overlay">
+                                        <Link href="/portfolio" className="">
+                                            See More
+                                        </Link>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p2Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p3Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={p1Image} alt="" />
+                                <div className="btn_overlay">
+                                    <Link href="/portfolio" className="">
+                                        See More
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             {/* end portfolio section */}
@@ -215,112 +259,130 @@ export default function HomePage() {
             {/* service section  */}
             <section className="service_section layout_padding">
                 <div className="container ">
-                <div className="heading_container heading_center">
-                    <h2>Our <span>Services</span></h2>
-                </div>
-                <div className="row">
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s1Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Home Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
+                    <div className="heading_container heading_center">
+                        <h2>Our <span>Services</span></h2>
+                        <p className="text-lg text-center px-4">
+                            At Ozoh Engineering Company, we prioritize innovation, reliability, 
+                            and efficiency in every project we undertake. Whether you require 
+                            installations, repairs, or maintenance services, we have the expertise 
+                            to deliver tailored solutions that meet industry standards and regulations.
                         </p>
+                    </div>
+                    <div className="row">
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s1Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Welding And Fabrication
+                                    </h5>
+                                    <p>
+                                        We provide seamless welding and precise fabrication, 
+                                        ensuring durable and high-quality results for various applications. 
+                                        Whether it's custom or industrial components, we prioritize excellence 
+                                        in craftsmanship and adhere to the highest industry standards.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s2Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Roofing
+                                    </h5>
+                                    <p>
+                                        We provide efficient and reliable solutions for residential, 
+                                        commercial, and industrial property. From repairs, maintenance 
+                                        to complete roof installations, our experienced professionals 
+                                        ensure that your roof remains leak-free, and visually appealing.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s3Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Maintenance Of Structures
+                                    </h5>
+                                    <p>
+                                        We focus on preserving, the integrity and longevity of your 
+                                        structures. We offer routine inspections, preventive maintenance 
+                                        plans, and prompt repairs to address any structural issues, ensuring 
+                                        the safety and stability of your buildings or facilities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s4Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Painting
+                                    </h5>
+                                    <p>
+                                        We revitalize your living or working spaces with a fresh coat 
+                                        of paint. We bring creativity, precision, and attention to detail 
+                                        to every project, delivering exceptional results that truly enhance 
+                                        the aesthetic appeal of your property in both interior and exterior.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s5Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Cival Works
+                                    </h5>
+                                    <p>
+                                        We encompass a wide range of infrastructure projects including 
+                                        road construction, drainage systems, excavation, landscaping, 
+                                        and more. We boast a team of experienced civil engineers and 
+                                        technicians who bring attention to detail to every project.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s6Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Office Design
+                                    </h5>
+                                    <p>
+                                        We create functional and inspiring workspaces that promote 
+                                        productivity, collaboration, and employee well-being. From efficient 
+                                        space planning and ergonomic considerations to aesthetic customization, 
+                                        we support your business objectives.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div className="btn-box">
+                        <a href="">
+                        Read More
+                        </a>
                     </div>
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s2Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Gate Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s3Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Window Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s4Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Machine Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s5Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Bike Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="col-sm-6 col-md-4">
-                    <div className="box ">
-                        <div className="img-box">
-                        <Image src={s6Image} alt="" />
-                        </div>
-                        <div className="detail-box">
-                        <h5>
-                            Car Welding
-                        </h5>
-                        <p>
-                            when looking at its layout. The point of using Lorem Ipsum is
-                            that it has a more-or-less normal
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div className="btn-box">
-                    <a href="">
-                    Read More
-                    </a>
-                </div>
                 </div>
             </section>
             {/* end service section  */}
@@ -330,8 +392,16 @@ export default function HomePage() {
                 <div className="container">
                 <div className="heading_container heading_center">
                     <h2>Get In <span>Touch</span></h2>
+                    <p className="text-lg px-4">
+                        With a proven track record of successful projects and a 
+                        dedication to delivering exceptional results, Ozoh Engineering 
+                        Company is your trusted partner for all your engineering needs. 
+                        Contact us today to discuss how we can bring your visions to life 
+                        and help you achieve your goals.
+                    </p>
                 </div>
-                <div className="row flex justify-center text-center items-center">
+                <div className="row flex justify-center text-center items-center mx-3">
+                    <h3 className=" font-medium">Contact Form</h3>
                     <div className="col-md-6 px-0">
                     <div className="form_container ">
                         <form action="">
@@ -360,12 +430,12 @@ export default function HomePage() {
                         </div>
                         <div className="form-row">
                             <div className="form-group col">
-                            <input type="text" className="message-box form-control" placeholder="Message" />
+                            <textarea type="text" className="message-box form-control" placeholder="Message" />
                             </div>
                         </div>
                         <div className="btn_box">
                             <button>
-                            SEND
+                                SEND
                             </button>
                         </div>
                         </form>
@@ -377,99 +447,65 @@ export default function HomePage() {
             {/* end contact section  */}
 
             {/* client section  */}
-            <section className="client_section layout_padding">
-                <div className="container">
-                <div className="heading_container heading_center">
-                    <h2>
-                    Testimonial
+            <section id="testimonials" className='mx-auto'>
+
+                {/* Container to heading and testm blocks */}
+                <div className="max-w-6xl px-5 mx-auto mt-16 text-center">
+
+                    {/* Heading */}
+                    <h2 className="text-4xl font-bold text-center">
+                        What's Different About USVA?
                     </h2>
-                </div>
-                <div className="row">
-                    <div className="col-md-9 mx-auto">
-                    <div id="customCarousel2" className="carousel slide" data-ride="carousel">
-                        <div className="row">
-                        <div className="col-md-11">
-                            <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <div className="box">
-                                <div className="client_id">
-                                    <div className="img-box">
-                                    <Image src={clientImage} alt="" />
-                                    </div>
-                                    <h5>
-                                    Alex Jonson
-                                    </h5>
-                                </div>
-                                <div className="detail-box">
-                                    <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="box">
-                                <div className="client_id">
-                                    <div className="img-box">
-                                    <img src="images/client.jpg" alt="" />
-                                    </div>
-                                    <h5>
-                                    Alex Jonson
-                                    </h5>
-                                </div>
-                                <div className="detail-box">
-                                    <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="carousel-item">
-                                <div className="box">
-                                <div className="client_id">
-                                    <div className="img-box">
-                                    <img src="images/client.jpg" alt="" />
-                                    </div>
-                                    <h5>
-                                    Alex Jonson
-                                    </h5>
-                                </div>
-                                <div className="detail-box">
-                                    <p>
-                                    ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit
-                                    </p>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
+
+                    {/* Testimonial Container */}
+                    <div className="flex flex-col mt-24 md:flex-row md:space-x-6">
+
+                        {/* Testimonial 1 */}
+                        <div className="flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3">
+
+                            <Image className='w-28 -mt-14 rounded-full' alt="" />
+
+                            <h5 className="text-lg font-bold">Flavia Bae</h5>
+
+                            <p className="text-md text-gray-700">
+                                "USVA has managed to uplift the youths' talent of volleyball. 
+                                The ability to develop an all round physically and mentally 
+                                fit volleyballer is what we need in the volleyball sport. And 
+                                USVA has provided it."
+                            </p>
                         </div>
-                        <div className="col-md-1">
-                            <ol className="carousel-indicators">
-                            <li data-target="#customCarousel2" data-slide-to="0" className="active"></li>
-                            <li data-target="#customCarousel2" data-slide-to="1"></li>
-                            <li data-target="#customCarousel2" data-slide-to="2"></li>
-                            </ol>
+
+                        {/* Testimonial 2 */}
+                        <div className="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:flex md:w-1/3">
+
+                            <Image className='w-28 h-28 -mt-14 rounded-full' alt="" />
+
+                            <h5 className="text-lg font-bold">Andy Tyga</h5>
+
+                            <p className="text-md text-gray-700">
+                                "I have managed to participate in very many 
+                                competitions and through these, i have won counless medals 
+                                and trophies. Most of these have been possible through the 
+                                help of USVA."
+                            </p>
                         </div>
+
+                        {/* Testimonial 3 */}
+                        <div className="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:flex md:w-1/3">
+
+                            <Image className='w-28 h-28 -mt-14 rounded-full' alt="" />
+
+                            <h5 className="text-lg font-bold">Anonymous</h5>
+
+                            <p className="text-md text-gray-700">
+                                "USVA is like home to me, there is always someone to look 
+                                up to, either for help or for mentorship. The whole team
+                                 is determined to offer endless support in the name of the support."
+                            </p>
                         </div>
                     </div>
-                    </div>
                 </div>
-                </div>
+
             </section>
             {/* end client section  */}
 
