@@ -26,12 +26,12 @@ export default function HomePage() {
     return (
         <div className="h-screen w-screen my-3 mx-auto">
             <div className="header_section">
-                <div className="flex justify-center md:justify-between mx-auto md:space-x-72 py-3 header_top text-xl">
+                <div className="flex-col text-center mx-auto py-3 header_top">
                     <div className="text-2xl md:ml-16">
-                        <Link className="navbar-brand md:pl-20 text-4xl flex-col" href="/"> <div className="text-6xl">OZOH</div> <span className="text-2xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
+                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> <div className=" text-7xl">OZOH</div> <span className="text-4xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
                     </div>
                     
-                    <div className="social_box md:pr-24 space-x-3 md:space-x-5">
+                    <div className="social_box space-x-3 md:ml-28 md:space-x-5 flex justify-center text-center">
                         <Link href="www.facebook.com">
                             <i className="fa fa-facebook" aria-hidden="true"></i>
                         </Link>
@@ -400,7 +400,7 @@ export default function HomePage() {
                         and help you achieve your goals.
                     </p>
                 </div>
-                <div className="row flex justify-center text-center items-center mx-3">
+                <div className="row flex justify-center text-center items-center mx-1">
                     <h3 className=" font-medium">Contact Form</h3>
                     <div className="col-md-6 px-0">
                     <div className="form_container ">
