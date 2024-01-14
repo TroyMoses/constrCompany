@@ -195,7 +195,7 @@ export default function ContactPage() {
                                 </div>
                                 <div className="col-md-3 mx-auto  ">
                                     <h5>
-                                        social media
+                                        Social Media
                                     </h5>
                                     <div className="social_box">
                                         <Link href="www.facebook.com">
