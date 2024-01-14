@@ -20,18 +20,46 @@ import clientImage from '../app/public/assets/client.jpg';
 
 
 export default function HomePage() {
-
-    const emailAddress = 'helpingbank7@gmail.com'
     
     return (
         <div className="h-screen w-screen my-3 mx-auto">
             <div className="header_section">
-                <div className="flex-col text-center mx-auto py-3 header_top">
+            <div className="flex-col text-center mx-auto py-3 header_top md:hidden">
                     <div className="text-2xl md:ml-16">
-                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> <div className=" text-7xl">OZOH</div> <span className="text-2xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
+                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> 
+                            <div className=" text-7xl">OZOH</div> 
+                            <span className="text-2xl md:text-4xl">
+                                ENGINEERING COMPANY
+                            </span> 
+                        </Link>
                     </div>
                     
                     <div className="social_box space-x-3 md:ml-28 md:space-x-5 flex justify-center text-center">
+                        <Link href="www.facebook.com">
+                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                        </Link>
+                        <Link href="www.whatsapp.com">
+                            <i className="fa fa-whatsapp" aria-hidden="true"></i>
+                        </Link>
+                        <Link href="www.instagram.com">
+                            <i className="fa fa-instagram" aria-hidden="true"></i>
+                        </Link>
+                        <Link href="www.linkedin.com">
+                            <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        </Link>
+                    </div>
+                </div>
+                <div className="hidden md:flex md:justify-between mx-auto py-3 header_top">
+                    <div className="text-2xl md:ml-16">
+                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> 
+                            <div className=" text-7xl">OZOH</div> 
+                            <span className="text-2xl md:text-4xl">
+                                ENGINEERING COMPANY
+                            </span> 
+                        </Link>
+                    </div>
+                    
+                    <div className="social_box space-x-3 md:mr-20 md:space-x-5 flex justify-center text-center">
                         <Link href="www.facebook.com">
                             <i className="fa fa-facebook" aria-hidden="true"></i>
                         </Link>
@@ -93,10 +121,10 @@ export default function HomePage() {
                                     </p>
                                 </h1>
                                 <div className="btn-box justify-center">
-                                    <Link href="/services" className="btn1">
+                                    <Link href="/services" className="btn1 rounded">
                                         Read More
                                     </Link>
-                                    <Link href="/contact" className="btn2">
+                                    <Link href="/contact" className="btn2 rounded">
                                         Contact Us
                                     </Link>
                                 </div>
@@ -129,7 +157,7 @@ export default function HomePage() {
                                     industry, as we strive to meet and exceed the unique needs of our clients.
                                     
                                 </p>
-                                <Link className="text-lg" href="/services">
+                                <Link className="text-lg rounded" href="/services">
                                     Read More
                                 </Link>
                             </div>
@@ -159,7 +187,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p1Image} alt="" />
                                     <div className="btn_overlay">
-                                        <Link href="/portfolio" className="">
+                                        <Link href="/portfolio" className="rounded">
                                             See More
                                         </Link>
                                     </div>
@@ -171,7 +199,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p2Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
@@ -183,7 +211,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p3Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
@@ -195,7 +223,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p1Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
@@ -209,7 +237,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p1Image} alt="" />
                                     <div className="btn_overlay">
-                                        <Link href="/portfolio" className="">
+                                        <Link href="/portfolio" className="rounded">
                                             See More
                                         </Link>
                                     </div>
@@ -221,7 +249,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p2Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
@@ -233,7 +261,7 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p3Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
@@ -245,13 +273,18 @@ export default function HomePage() {
                             <div className="img-box">
                                 <Image src={p1Image} alt="" />
                                 <div className="btn_overlay">
-                                    <Link href="/portfolio" className="">
+                                    <Link href="/portfolio" className="rounded">
                                         See More
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="text-center py-4">
+                    <Link href="/portfolio" className="text-white border rounded px-3 py-2 hover:bg-orange-700">
+                        See More Photos
+                    </Link>
                 </div>
             </section>
             {/* end portfolio section */}
@@ -279,10 +312,10 @@ export default function HomePage() {
                                         Welding And Fabrication
                                     </h5>
                                     <p>
-                                        We provide seamless welding and precise fabrication, 
-                                        ensuring durable and high-quality results for various applications. 
-                                        Whether it's custom or industrial components, we prioritize excellence 
-                                        in craftsmanship and adhere to the highest industry standards.
+                                        For seamless welding and precise fabrication, we set 
+                                        metallic skeleton for buildings like factories, fabricating trusses 
+                                        suitably designed for the building and finally roofing them. 
+                                        We prioritize adherence to the highest industry standards.
                                     </p>
                                 </div>
                             </div>
@@ -348,13 +381,13 @@ export default function HomePage() {
                                 </div>
                                 <div className="detail-box">
                                     <h5>
-                                        Cival Works
+                                        Civil Works
                                     </h5>
                                     <p>
                                         We encompass a wide range of infrastructure projects including 
-                                        road construction, drainage systems, excavation, landscaping, 
-                                        and more. We boast a team of experienced civil engineers and 
-                                        technicians who bring attention to detail to every project.
+                                        construction of domestic, commercical and industrial buildings, 
+                                        excavation, landscaping, and more. Our  civil engineers and 
+                                        technicians bring attention to detail to every project.
                                     </p>
                                 </div>
                             </div>
@@ -379,9 +412,9 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div className="btn-box">
-                        <a href="">
-                        Read More
-                        </a>
+                        <Link href="/services" className="rounded">
+                            Read More
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -390,58 +423,58 @@ export default function HomePage() {
              {/* contact section  */}
             <section className="contact_section">
                 <div className="container">
-                <div className="heading_container heading_center">
-                    <h2>Get In <span>Touch</span></h2>
-                    <p className="text-lg px-4">
-                        With a proven track record of successful projects and a 
-                        dedication to delivering exceptional results, Ozoh Engineering 
-                        Company is your trusted partner for all your engineering needs. 
-                        Contact us today to discuss how we can bring your visions to life 
-                        and help you achieve your goals.
-                    </p>
-                </div>
-                <div className="row flex justify-center text-center items-center mx-1">
-                    <h3 className=" font-medium">Contact Form</h3>
-                    <div className="col-md-6 px-0">
-                    <div className="form_container ">
-                        <form action="">
-                        <div className="form-row">
-                            <div className="form-group col">
-                            <input type="text" className="form-control" placeholder="Your Name" />
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col-lg-6">
-                            <input type="text" className="form-control" placeholder="Phone Number" />
-                            </div>
-                            <div className="form-group col-lg-6">
-                            <select name="" id="" className="form-control wide">
-                                <option value="">Select Service</option>
-                                <option value="">Service 1</option>
-                                <option value="">Service 2</option>
-                                <option value="">Service 3</option>
-                            </select>
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col">
-                            <input type="email" className="form-control" placeholder="Email" />
-                            </div>
-                        </div>
-                        <div className="form-row">
-                            <div className="form-group col">
-                            <textarea type="text" className="message-box form-control" placeholder="Message" />
-                            </div>
-                        </div>
-                        <div className="btn_box">
-                            <button>
-                                SEND
-                            </button>
-                        </div>
-                        </form>
+                    <div className="heading_container heading_center">
+                        <h2>Get In <span>Touch</span></h2>
+                        <p className="text-lg px-4">
+                            With a proven track record of successful projects and a 
+                            dedication to delivering exceptional results, Ozoh Engineering 
+                            Company is your trusted partner for all your engineering needs. 
+                            Contact us today to discuss how we can bring your visions to life 
+                            and help you achieve your goals.
+                        </p>
                     </div>
+                    <h3 className=" font-medium text-center">Contact Form</h3>
+                    <div className="row flex justify-center text-center items-center mx-1">
+                        <div className="col-md-6 px-0">
+                            <div className="form_container ">
+                                <form action="">
+                                    <div className="form-row">
+                                        <div className="form-group col">
+                                            <input type="text" className="form-control rounded" placeholder="Your Name" />
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group col-lg-6">
+                                            <input type="text" className="form-control rounded" placeholder="Phone Number" />
+                                        </div>
+                                        <div className="form-group col-lg-6">
+                                            <select name="" id="" className="form-control wide rounded">
+                                                <option value="">Select Service</option>
+                                                <option value="">Service 1</option>
+                                                <option value="">Service 2</option>
+                                                <option value="">Service 3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group col">
+                                            <input type="email" className="form-control rounded" placeholder="Email" />
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="form-group col">
+                                            <textarea type="text" className="message-box form-control rounded" placeholder="Message" />
+                                        </div>
+                                    </div>
+                                    <div className="btn_box">
+                                        <button className="rounded">
+                                            SEND
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </section>
             {/* end contact section  */}
@@ -454,7 +487,7 @@ export default function HomePage() {
 
                     {/* Heading */}
                     <h2 className="text-4xl font-bold text-center">
-                        What's Different About USVA?
+                        What's Different About OZOH?
                     </h2>
 
                     {/* Testimonial Container */}
@@ -512,120 +545,99 @@ export default function HomePage() {
             {/* info section  */}
             <section className="info_section ">
                 <div className="info_container layout_padding2">
-                <div className="container">
-                    <div className="info_logo">
-                    <a className="navbar-brand" href="index.html"> Tro<span>Weld</span> </a>
-                    </div>
-                    <div className="info_main">
-                    <div className="row">
-                        <div className="col-md-3 col-lg-2">
-                        <div className="info_link-box">
-                            <h5>
-                            Useful Link
-                            </h5>
-                            <ul>
-                            <li className=" active">
-                                <a className="" href="index.html">Home <span className="sr-only">(current)</span></a>
-                            </li>
-                            <li className="">
-                                <a className="" href="about.html">About </a>
-                            </li>
-                            <li className="">
-                                <a className="" href="service.html">Services </a>
-                            </li>
-                            <li className="">
-                                <a className="" href="portfolio.html"> Portfolio </a>
-                            </li>
-                            <li className="">
-                                <a className="" href="contact.html"> Contact </a>
-                            </li>
-                            </ul>
+                    <div className="container">
+                        <div className="info_logo">
+                            <a className="navbar-brand" href="index.html"> OZOH <span>ENGINEERING COMPANY</span> </a>
                         </div>
-                        </div>
-                        <div className="col-md-3 ">
-                        <h5>
-                            Welding
-                        </h5>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscinaliquaLoreadipiscing
-                        </p>
-                        </div>
-                        <div className="col-md-3 mx-auto  ">
-                        <h5>
-                            social media
-                        </h5>
-                        <div className="social_box">
-                            <a href="#">
-                            <i className="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a href="#">
-                            <i className="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                            <a href="#">
-                            <i className="fa fa-linkedin" aria-hidden="true"></i>
-                            </a>
-                            <a href="#">
-                            <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        </div>
-                        <div className="col-md-3">
-                        <h5>
-                            Our welding center
-                        </h5>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur
-                            adipiscinaliquaLoreadipiscing
-                        </p>
-                        </div>
-                    </div>
-                    </div>
-                    <div className="info_bottom">
-                    <div className="row">
-                        <div className="col-lg-9">
-                        <div className="info_contact ">
+                        <div className="info_main">
                             <div className="row">
-                            <div className="col-md-3">
-                                <a href="#" className="link-box">
-                                <i className="fa fa-map-marker" aria-hidden="true"></i>
-                                <span>
-                                    Location
-                                </span>
-                                </a>
-                            </div>
-                            <div className="col-md-5">
-                                <a href="#" className="link-box">
-                                <i className="fa fa-phone" aria-hidden="true"></i>
-                                <span>
-                                    Call +01 1234567890
-                                </span>
-                                </a>
-                            </div>
-                            <div className="col-md-4">
-                                <a href="#" className="link-box">
-                                <i className="fa fa-envelope" aria-hidden="true"></i>
-                                <span>
-                                    demo@gmail.com
-                                </span>
-                                </a>
-                            </div>
+                                <div className="col-md-3 col-lg-2">
+                                    <div className="info_link-box">
+                                        <h5>
+                                            Useful Links
+                                        </h5>
+                                        <ul>
+                                            <li>
+                                                <Link href="/">Home</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/about">About </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/services">Services </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/portfolio"> Portfolio </Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/contact"> Contact </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="col-md-3 mx-auto  ">
+                                    <h5>
+                                        social media
+                                    </h5>
+                                    <div className="social_box">
+                                        <Link href="www.facebook.com">
+                                            <i className="fa fa-facebook" aria-hidden="true"></i>
+                                        </Link>
+                                        <Link href="www.twitter.com">
+                                            <i className="fa fa-twitter" aria-hidden="true"></i>
+                                        </Link>
+                                        <Link href="www.linkedin.com">
+                                            <i className="fa fa-linkedin" aria-hidden="true"></i>
+                                        </Link>
+                                        <Link href="www.youtube.com">
+                                            <i className="fa fa-youtube-play" aria-hidden="true"></i>
+                                        </Link>
+                                    </div>
+                                </div>
+                                <div className="col-md-3 mt-4">
+                                    <div className="info_form ">
+                                        <h5>Subscribe To Our Newsletter</h5>
+                                        <form action="">
+                                            <input type="email" placeholder="Enter Your Email" />
+                                            <button>
+                                                <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        </div>
-                        <div className="col-md-3">
-                        <div className="info_form ">
-                            <form action="">
-                            <input type="email" placeholder="Enter Your Email" />
-                            <button>
-                                <i className="fa fa-arrow-right" aria-hidden="true"></i>
-                            </button>
-                            </form>
-                        </div>
+                        <div className="info_bottom">
+                            <div className="info_contact ">
+                                <div className="row">
+                                    <div className="col-md-3">
+                                        <Link href="/" className="link-box">
+                                        <i className="fa fa-map-marker" aria-hidden="true"></i>
+                                        <span>
+                                            Bweyogerere Butto
+                                        </span>
+                                        </Link>
+                                    </div>
+                                    <div className="col-md-5">
+                                        <Link href="/" className="link-box">
+                                            <i className="fa fa-phone" aria-hidden="true"></i>
+                                            <span>
+                                                Call +256 772 174 100 or +256 758 156 715(Whatsapp)
+                                            </span>
+                                        </Link>
+                                    </div>
+                                    <div className="col-md-4">
+                                        <Link href="mailto:ozohengineeringcompany@gmail.com" className="link-box">
+                                            <i className="fa fa-envelope" aria-hidden="true"></i>
+                                            <span>
+                                                ozohengineeringcompany@gmail.com
+                                            </span>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
                 </div>
             </section>
             {/* end info section  */}
@@ -633,19 +645,13 @@ export default function HomePage() {
             {/* footer section - */}
             <footer className="footer_section">
                 <div className="container">
-                <p>
-                    &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Free Html Templates</a>
-                </p>
+                    <p>
+                        &copy; <span id="displayYear"></span> All Rights Reserved By
+                        <span className="text-orange-600"><Link href="www.github.com/TroyMoses"> TroyMoses</Link></span>
+                    </p>
                 </div>
             </footer>
             {/* footer section  */}
-
-            {/* Footer */}
-            <footer className="py-5 pl-10">
-                
-            </footer>
-
         </div>
     )
 }
