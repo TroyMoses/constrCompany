@@ -147,7 +147,7 @@ export default function HomePage() {
                                 </div>
                                 <p className=" text-lg">
                                     We are a leading provider of comprehensive engineering solutions. 
-                                    Located in example, we specialize in a wide range of services included 
+                                    Located in Butto, Bweyogerere, we specialize in a wide range of services included 
                                     in the services section. 
                                 </p>
                                 <p className=" text-lg">
