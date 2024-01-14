@@ -28,7 +28,7 @@ export default function HomePage() {
             <div className="header_section">
                 <div className="flex-col text-center mx-auto py-3 header_top">
                     <div className="text-2xl md:ml-16">
-                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> <div className=" text-7xl">OZOH</div> <span className="text-4xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
+                        <Link className="navbar-brand md:pl-20 flex-col" href="/"> <div className=" text-7xl">OZOH</div> <span className="text-2xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
                     </div>
                     
                     <div className="social_box space-x-3 md:ml-28 md:space-x-5 flex justify-center text-center">
