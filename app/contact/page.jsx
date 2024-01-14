@@ -161,7 +161,7 @@ export default function ContactPage() {
             {/* end contact section  */}
 
             {/* info section  */}
-            <section className="info_section ">
+            <section className="info_section mt-10">
                 <div className="info_container layout_padding2">
                     <div className="container">
                         <div className="info_logo">
