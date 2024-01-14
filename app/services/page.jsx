@@ -232,7 +232,7 @@ export default function ServicesPage() {
                 <div className="info_container layout_padding2">
                     <div className="container">
                         <div className="info_logo">
-                            <a className="navbar-brand" href="index.html"> OZOH <span>ENGINEERING COMPANY</span> </a>
+                            <a className="navbar-brand" href="index.html"> OZOH <span>ENG. COMPANY</span> </a>
                         </div>
                         <div className="info_main">
                             <div className="row">
