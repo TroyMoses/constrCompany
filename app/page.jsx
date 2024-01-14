@@ -26,7 +26,7 @@ export default function HomePage() {
     return (
         <div className="h-screen w-screen my-3 mx-auto">
             <div className="header_section">
-                <div className="flex justify-center md:justify-between space-x-5 md:space-x-72 py-3 header_top text-xl">
+                <div className="flex justify-center md:justify-between mx-auto md:space-x-72 py-3 header_top text-xl">
                     <div className="text-2xl md:ml-16">
                         <Link className="navbar-brand md:pl-20 text-4xl flex-col" href="/"> <div className="text-6xl">OZOH</div> <span className="text-2xl md:text-4xl">ENGINEERING COMPANY</span> </Link>
                     </div>

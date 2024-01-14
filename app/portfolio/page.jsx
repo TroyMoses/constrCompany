@@ -1,8 +1,8 @@
-export default function ServicesPage() {
+export default function PortfolioPage() {
     return(
         <div>
             <h1>
-                Services Page
+                Portfolio Page
             </h1>
         </div>
     );
