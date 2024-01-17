@@ -17,6 +17,18 @@ import s4Image from '../app/public/assets/s4.png';
 import s5Image from '../app/public/assets/s5.png';
 import s6Image from '../app/public/assets/s6.png';
 import clientImage from '../app/public/assets/client.jpg';
+import roofstructures3 from '../app/public/assets/roofstructures3.jpg';
+import roofing3 from '../app/public/assets/roofing3.jpg';
+import ozoh from '../app/public/assets/ozoh.jpg';
+import roofing from '../app/public/assets/roofing.jpg';
+import airconditioner from '../app/public/assets/airconditioner.jpg';
+import roofstructure8 from '../app/public/assets/roofstructure8.jpg';
+import roofstructures2 from '../app/public/assets/roofstructures2.jpg';
+import tankstructure2 from '../app/public/assets/tankstructure2.jpg';
+import structuralbuilding from '../app/public/assets/structuralbuilding.jpg';
+import scafolds from '../app/public/assets/scafolds.jpg';
+import tankstructure3 from '../app/public/assets/tankstructure3.jpg';
+import roofstructures4 from '../app/public/assets/roofstructures4.jpg';
 
 
 export default function HomePage() {
@@ -185,7 +197,7 @@ export default function HomePage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={tankstructure3} alt="" height={500} />
                                     <div className="btn_overlay">
                                         <Link href="/portfolio" className="rounded">
                                             See More
@@ -197,7 +209,7 @@ export default function HomePage() {
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
+                                <Image src={p3Image} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -209,7 +221,7 @@ export default function HomePage() {
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
+                                <Image src={roofing3} height={500} />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -235,7 +247,7 @@ export default function HomePage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={tankstructure2} height={500} />
                                     <div className="btn_overlay">
                                         <Link href="/portfolio" className="rounded">
                                             See More
@@ -247,7 +259,7 @@ export default function HomePage() {
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
+                                <Image src={roofstructures4} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -259,7 +271,7 @@ export default function HomePage() {
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
+                                <Image src={scafolds} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -271,7 +283,7 @@ export default function HomePage() {
                     <div className="item railing p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={structuralbuilding} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More

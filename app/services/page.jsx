@@ -222,6 +222,48 @@ export default function ServicesPage() {
                                 </div>
                             </div>
                         </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s3Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        Installation of Tanks
+                                    </h5>
+                                    <p>
+                                        Whether it's above-ground or below-ground tanks, we take pride in delivering 
+                                        top-notch solutions tailored to meet your specific needs. 
+                                        From site assessment to the final connection, our skilled 
+                                        professionals guarantee the durability and reliability of the installed tanks.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-sm-6 col-md-4">
+                            <div className="box ">
+                                <div className="img-box">
+                                    <Image src={s3Image} alt="" />
+                                </div>
+                                <div className="detail-box">
+                                    <h5>
+                                        All Structural Engineering Works
+                                    </h5>
+                                    <p>
+                                        Unlock the full potential of your architectural visions with 
+                                        our comprehensive structural engineering services. 
+                                        We bring a wealth of expertise to every project, 
+                                        encompassing design, analysis, and execution of all structural elements. 
+                                        From residential buildings to commercial complexes
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-center py-4 mt-4">
+                        <Link href="/contact" className="text-white border rounded px-3 py-2 bg-orange-700 hover:bg-orange-600">
+                            Contact Us For A Service
+                        </Link>
                     </div>
                 </div>
             </section>
