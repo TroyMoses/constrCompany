@@ -42,6 +42,42 @@ import metalworks from '../public/assets/metalworks.jpg';
 
 
 export default function PortfolioPage() {
+
+    const router = useRouter();
+
+    const [clientEmail, setClientEmail] = React.useState({
+        newsemail: ""
+    });
+
+    const [loading, setLoading] = React.useState(false);
+
+    const handleEmailSubmit = async(e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const res = await fetch('/api/emails', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(clientEmail)
+            });
+            const data = await res.json();
+            if(data.success) {
+                setClientEmail({
+                    newsemail: ""
+                });
+                setLoading(false);
+            } else {
+                setLoading(false);
+            }
+            router.push('/contact');
+        } catch (error) {
+            console.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
     
     return (
         <div className="h-screen w-screen my-3 mx-auto">
@@ -345,9 +381,17 @@ export default function PortfolioPage() {
                                 <div className="col-md-3 mt-4">
                                     <div className="info_form ">
                                         <h5>Subscribe To Our Newsletter</h5>
-                                        <form action="">
-                                            <input type="email" placeholder="Enter Your Email" />
-                                            <button>
+                                        <div className="-mt-2 mb-4">
+                                            <p className="text-lg text-orange-500">{loading ? 'Please wait, Processing Email .....' : ''}</p>
+                                        </div>
+                                        <form action="" onSubmit={handleEmailSubmit}>
+                                            <input 
+                                                className="text-black" 
+                                                type="email" 
+                                                id="newsemail"
+                                                placeholder="Enter Your Email" 
+                                                onChange={(e) => setClientEmail({...clientEmail, newsemail:e.target.value})} />
+                                            <button type="submit">
                                                 <i className="fa fa-arrow-right" aria-hidden="true"></i>
                                             </button>
                                         </form>
