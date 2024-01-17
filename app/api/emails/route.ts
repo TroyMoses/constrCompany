@@ -1,5 +1,5 @@
 import { connect } from "../../../dbConfig/dbConfig";
-import ozohClient from "../../../models/clientModel";
+import ozohEmailsClient from "../../../models/emailsModel";
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from 'nodemailer';
 
@@ -10,19 +10,15 @@ connect()
 export async function POST(request: NextRequest) {
     try {
         const reqBody = await request.json();
-        const { name, number, service, email, message } = reqBody;
+        const { newsemail } = reqBody;
         
         const user = process.env.EMAIL_USER;
 
-        const newClientFeedback = new ozohClient({
-            name,
-            number,
-            service,
-            email,
-            message
+        const newClientEmail = new ozohEmailsClient({
+            newsemail
         });
         
-        const clientFeedback = await newClientFeedback.save(); 
+        const clientEmail = await newClientEmail.save();
 
         // Send feedback email
         const transporter = nodemailer.createTransport({
@@ -40,24 +36,20 @@ export async function POST(request: NextRequest) {
             await transporter.sendMail({
                 from: user,
                 to: 'mugabimoses07@gmail.com',
-                subject: `New Feedback from client, ${name}`,
+                subject: `New Email subscribed for NewsLetter.`,
                 html: `
-                    <p>Name: ${name}</p>
-                    <p>Number: ${number}</p>
-                    <p>Service: ${service}</p>
-                    <p>Email: ${email}</p>
-                    <p>Message: ${message}</p>
+                    <p>Email: ${newsemail}</p>
                 `
             });
 
             await transporter.sendMail({
                 from: user,
-                to: email,
-                replyTo: email,
-                subject: `Feedback Received`,
+                to: newsemail,
+                replyTo: newsemail,
+                subject: `Email Received`,
                 html: `
-                <p>Thank you so much, ${name} for your feedback. 
-                We promise to offer you the best service.</p>
+                <p>Thank you so much for subscribing to our newsletter. 
+                We promise to give you updates on our services.</p>
                 `
             });
 
