@@ -1,5 +1,5 @@
 
-# Ozoh Engineering Company
+# Ozoh Engineering Company Website
 
 Welcome to the Ozoh Engineering Company Website! This is a Next.js website for a fictional company that specializes in providing all engineering services. The website is designed to showcase the company's offerings and allow users to get in touch for inquiries and feedback.
 
