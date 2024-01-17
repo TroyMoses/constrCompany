@@ -1,7 +1,7 @@
 
-# Helping Bank
+# Ozoh Engineering Company
 
-Welcome to the Helping Bank project! This is a Next.js website for a fictional company that specializes in providing loan-related services. The website is designed to showcase the company's offerings and allow users to get in touch for inquiries and feedback.
+Welcome to the Ozoh Engineering Company Website! This is a Next.js website for a fictional company that specializes in providing all engineering services. The website is designed to showcase the company's offerings and allow users to get in touch for inquiries and feedback.
 
 ## Table of Contents
 
@@ -26,13 +26,13 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/TroyMoses/helping_bank.git
+   git clone https://github.com/TroyMoses/constrCompany.git
    ```
 
 2. Change into the project directory:
 
    ```bash
-   cd helping_bank
+   cd constrCompany
    ```
 
 3. Install the dependencies:
@@ -57,8 +57,7 @@ The website will be accessible at [http://localhost:3000](http://localhost:3000)
 - About page with information about the company
 - Services page listing different loan services
 - Contact page for users to get in touch and provide feedback
-- User registration and login functionality (in progress)
-- Database integration for storing user data (in progress)
+- Database integration for storing user data
 
 ## Contributing
 
