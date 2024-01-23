@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -17,9 +17,105 @@ import s4Image from '../app/public/assets/s4.png';
 import s5Image from '../app/public/assets/s5.png';
 import s6Image from '../app/public/assets/s6.png';
 import clientImage from '../app/public/assets/client.jpg';
+import roofstructures3 from '../app/public/assets/roofstructures3.jpg';
+import roofing3 from '../app/public/assets/roofing3.jpg';
+import ozoh from '../app/public/assets/ozoh.jpg';
+import roofing from '../app/public/assets/roofing.jpg';
+import airconditioner from '../app/public/assets/airconditioner.jpg';
+import roofstructure8 from '../app/public/assets/roofstructure8.jpg';
+import roofstructures2 from '../app/public/assets/roofstructures2.jpg';
+import tankstructure2 from '../app/public/assets/tankstructure2.jpg';
+import structuralbuilding from '../app/public/assets/structuralbuilding.jpg';
+import scafolds from '../app/public/assets/scafolds.jpg';
+import tankstructure3 from '../app/public/assets/tankstructure3.jpg';
+import roofstructures4 from '../app/public/assets/roofstructures4.jpg';
 
 
 export default function HomePage() {
+
+    const router = useRouter();
+    const [client, setClient] = React.useState({
+        name: "",
+        number: "",
+        service: "",
+        email: "",
+        message: ""
+    });
+    const [clientEmail, setClientEmail] = React.useState({
+        newsemail: ""
+    });
+
+    const [loading, setLoading] = React.useState(false);
+
+    const [buttonDisabled, setButtonDisabled] = React.useState(true);
+
+    useEffect(() => {
+        if(client.name.length > 0 && client.number.length > 0 && client.service.length > 0 && client.email.length > 0 && client.message.length > 0) {
+            setButtonDisabled(false);
+        } else {
+            setButtonDisabled(true);
+        }
+    }, [client]);
+
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const res = await fetch('/api/clients', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(client)
+            });
+            const data = await res.json();
+            if(data.success) {
+                setClient({
+                    name: "",
+                    number: "",
+                    service: "",
+                    email: "",
+                    message: ""
+                });
+                setLoading(false);
+            } else {
+                setLoading(false);
+            }
+            router.push('/services');
+        } catch (error) {
+            console.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleEmailSubmit = async(e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const res = await fetch('/api/emails', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(clientEmail)
+            });
+            const data = await res.json();
+            if(data.success) {
+                setClientEmail({
+                    newsemail: ""
+                });
+                setLoading(false);
+            } else {
+                setLoading(false);
+            }
+            router.push('/contact');
+        } catch (error) {
+            console.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
     
     return (
         <div className="h-screen w-screen my-3 mx-auto">
@@ -185,7 +281,7 @@ export default function HomePage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={tankstructure3} alt="" height={500} />
                                     <div className="btn_overlay">
                                         <Link href="/portfolio" className="rounded">
                                             See More
@@ -197,7 +293,7 @@ export default function HomePage() {
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
+                                <Image src={p3Image} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -209,7 +305,7 @@ export default function HomePage() {
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
+                                <Image src={roofing3} height={500} />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -235,7 +331,7 @@ export default function HomePage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={tankstructure2} height={500} />
                                     <div className="btn_overlay">
                                         <Link href="/portfolio" className="rounded">
                                             See More
@@ -247,7 +343,7 @@ export default function HomePage() {
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
+                                <Image src={roofstructures4} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -259,7 +355,7 @@ export default function HomePage() {
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
+                                <Image src={scafolds} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -271,7 +367,7 @@ export default function HomePage() {
                     <div className="item railing p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
+                                <Image src={structuralbuilding} alt="" />
                                 <div className="btn_overlay">
                                     <Link href="/portfolio" className="rounded">
                                         See More
@@ -420,7 +516,7 @@ export default function HomePage() {
             </section>
             {/* end service section  */}
 
-             {/* contact section  */}
+            {/* contact section  */}
             <section className="contact_section">
                 <div className="container">
                     <div className="heading_container heading_center">
@@ -437,38 +533,62 @@ export default function HomePage() {
                     <div className="row flex justify-center text-center items-center mx-1">
                         <div className="col-md-6 px-0">
                             <div className="form_container ">
-                                <form action="">
+                                <form action="" onSubmit={handleSubmit}>
                                     <div className="form-row">
                                         <div className="form-group col">
-                                            <input type="text" className="form-control rounded" placeholder="Your Name" />
+                                            <input 
+                                                type="text" 
+                                                className="form-control rounded" 
+                                                id="name" 
+                                                placeholder="Your Name" 
+                                                onChange={(e) => setClient({...client, name:e.target.value})} />
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col-lg-6">
-                                            <input type="text" className="form-control rounded" placeholder="Phone Number" />
+                                            <input 
+                                                type="text" 
+                                                className="form-control rounded" 
+                                                id="number"
+                                                placeholder="Phone Number" 
+                                                onChange={(e) => setClient({...client, number:e.target.value})} />
                                         </div>
                                         <div className="form-group col-lg-6">
-                                            <select name="" id="" className="form-control wide rounded">
-                                                <option value="">Select Service</option>
-                                                <option value="">Service 1</option>
-                                                <option value="">Service 2</option>
-                                                <option value="">Service 3</option>
-                                            </select>
+                                            <input 
+                                                type="text" 
+                                                id="service" 
+                                                className="form-control wide rounded" 
+                                                placeholder="Specify Service Here"
+                                                onChange={(e) => setClient({...client, service:e.target.value})} >
+                                            </input>
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col">
-                                            <input type="email" className="form-control rounded" placeholder="Email" />
+                                            <input 
+                                                type="email" 
+                                                className="form-control rounded" 
+                                                id="email"
+                                                placeholder="Email" 
+                                                onChange={(e) => setClient({...client, email:e.target.value})} />
                                         </div>
                                     </div>
                                     <div className="form-row">
                                         <div className="form-group col">
-                                            <textarea type="text" className="message-box form-control rounded" placeholder="Message" />
+                                            <textarea 
+                                                type="text" 
+                                                className="message-box form-control rounded" 
+                                                id="message"
+                                                placeholder="Message" 
+                                                onChange={(e) => setClient({...client, message:e.target.value})} />
                                         </div>
                                     </div>
-                                    <div className="btn_box">
-                                        <button className="rounded">
-                                            SEND
+                                    <div className="btn_box flex-col">
+                                        <div className="-mt-2 mb-4">
+                                            <p className="text-lg text-orange-500">{loading ? 'Please wait, processing Feedback Form .....' : ''}</p>
+                                        </div>
+                                        <button type="submit" className="rounded">
+                                            {buttonDisabled ? 'Provide Feedback' : 'Send Feedback'}
                                         </button>
                                     </div>
                                 </form>
@@ -480,7 +600,7 @@ export default function HomePage() {
             {/* end contact section  */}
 
             {/* client section  */}
-            <section id="testimonials" className='mx-auto'>
+            <section id="testimonials" className='mx-auto mb-5'>
 
                 {/* Container to heading and testm blocks */}
                 <div className="max-w-6xl px-5 mx-auto mt-16 text-center">
@@ -489,54 +609,6 @@ export default function HomePage() {
                     <h2 className="text-4xl font-bold text-center">
                         What's Different About OZOH?
                     </h2>
-
-                    {/* Testimonial Container */}
-                    <div className="flex flex-col mt-24 md:flex-row md:space-x-6">
-
-                        {/* Testimonial 1 */}
-                        <div className="flex flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:w-1/3">
-
-                            <Image className='w-28 -mt-14 rounded-full' alt="" />
-
-                            <h5 className="text-lg font-bold">Flavia Bae</h5>
-
-                            <p className="text-md text-gray-700">
-                                "USVA has managed to uplift the youths' talent of volleyball. 
-                                The ability to develop an all round physically and mentally 
-                                fit volleyballer is what we need in the volleyball sport. And 
-                                USVA has provided it."
-                            </p>
-                        </div>
-
-                        {/* Testimonial 2 */}
-                        <div className="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:flex md:w-1/3">
-
-                            <Image className='w-28 h-28 -mt-14 rounded-full' alt="" />
-
-                            <h5 className="text-lg font-bold">Andy Tyga</h5>
-
-                            <p className="text-md text-gray-700">
-                                "I have managed to participate in very many 
-                                competitions and through these, i have won counless medals 
-                                and trophies. Most of these have been possible through the 
-                                help of USVA."
-                            </p>
-                        </div>
-
-                        {/* Testimonial 3 */}
-                        <div className="hidden flex-col items-center p-6 space-y-6 rounded-lg bg-gray-200 md:flex md:w-1/3">
-
-                            <Image className='w-28 h-28 -mt-14 rounded-full' alt="" />
-
-                            <h5 className="text-lg font-bold">Anonymous</h5>
-
-                            <p className="text-md text-gray-700">
-                                "USVA is like home to me, there is always someone to look 
-                                up to, either for help or for mentorship. The whole team
-                                 is determined to offer endless support in the name of the support."
-                            </p>
-                        </div>
-                    </div>
                 </div>
 
             </section>
@@ -597,9 +669,17 @@ export default function HomePage() {
                                 <div className="col-md-3 mt-4">
                                     <div className="info_form ">
                                         <h5>Subscribe To Our Newsletter</h5>
-                                        <form action="">
-                                            <input type="email" placeholder="Enter Your Email" />
-                                            <button>
+                                        <div className="-mt-2 mb-4">
+                                            <p className="text-lg text-orange-500">{loading ? 'Please wait, Processing Email .....' : ''}</p>
+                                        </div>
+                                        <form action="" onSubmit={handleEmailSubmit}>
+                                            <input 
+                                                className="text-black" 
+                                                type="email" 
+                                                id="newsemail"
+                                                placeholder="Enter Your Email" 
+                                                onChange={(e) => setClientEmail({...clientEmail, newsemail:e.target.value})} />
+                                            <button type="submit">
                                                 <i className="fa fa-arrow-right" aria-hidden="true"></i>
                                             </button>
                                         </form>

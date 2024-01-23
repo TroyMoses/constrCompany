@@ -17,9 +17,67 @@ import s4Image from '../public/assets/s4.png';
 import s5Image from '../public/assets/s5.png';
 import s6Image from '../public/assets/s6.png';
 import clientImage from '../public/assets/client.jpg';
+import roofstructures3 from '../public/assets/roofstructures3.jpg';
+import roofing3 from '../public/assets/roofing3.jpg';
+import ozoh from '../public/assets/ozoh.jpg';
+import roofing from '../public/assets/roofing.jpg';
+import airconditioner from '../public/assets/airconditioner.jpg';
+import roofstructure8 from '../public/assets/roofstructure8.jpg';
+import roofstructures2 from '../public/assets/roofstructures2.jpg';
+import tankstructure2 from '../public/assets/tankstructure2.jpg';
+import structuralbuilding from '../public/assets/structuralbuilding.jpg';
+import scafolds from '../public/assets/scafolds.jpg';
+import tankstructure3 from '../public/assets/tankstructure3.jpg';
+import roofstructures4 from '../public/assets/roofstructures4.jpg';
+import tankstructure4 from '../public/assets/tankstructure4.jpg';
+import tankstructure from '../public/assets/tankstructure.jpg';
+import sheetwalls from '../public/assets/sheetwalls.jpg';
+import sheetwall2 from '../public/assets/sheetwall2.jpg';
+import roofstructure6 from '../public/assets/roofstructure6.jpg';
+import roofstructure7 from '../public/assets/roofstructure7.jpg';
+import roofing2 from '../public/assets/roofing2.jpg';
+import roofstructures from '../public/assets/roofstructures.jpg';
+import engineer from '../public/assets/engineer.jpg';
+import metalworks from '../public/assets/metalworks.jpg';
 
 
 export default function PortfolioPage() {
+
+    const router = useRouter();
+
+    const [clientEmail, setClientEmail] = React.useState({
+        newsemail: ""
+    });
+
+    const [loading, setLoading] = React.useState(false);
+
+    const handleEmailSubmit = async(e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            const res = await fetch('/api/emails', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(clientEmail)
+            });
+            const data = await res.json();
+            if(data.success) {
+                setClientEmail({
+                    newsemail: ""
+                });
+                setLoading(false);
+            } else {
+                setLoading(false);
+            }
+            router.push('/contact');
+        } catch (error) {
+            console.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
     
     return (
         <div className="h-screen w-screen my-3 mx-auto">
@@ -114,36 +172,21 @@ export default function PortfolioPage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
-                                    <div className="btn_overlay">
-                                        <Link href="/portfolio" className="rounded">
-                                            See More
-                                        </Link>
-                                    </div>
+                                <Image src={tankstructure3} alt="" height={500} />
                             </div>
                         </div>
                     </div>
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
+                                <Image src={p3Image} alt="" />
                             </div>
                         </div>
                     </div>
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
+                                <Image src={roofing3} height={500} />
                             </div>
                         </div>
                     </div>
@@ -151,11 +194,6 @@ export default function PortfolioPage() {
                         <div className="box">
                             <div className="img-box">
                                 <Image src={p1Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -164,48 +202,118 @@ export default function PortfolioPage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
-                                    <div className="btn_overlay">
-                                        <Link href="/portfolio" className="rounded">
-                                            See More
-                                        </Link>
-                                    </div>
+                                <Image src={tankstructure} height={500} />
                             </div>
                         </div>
                     </div>
                     <div className="item facade p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p2Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
+                                <Image src={tankstructure2} alt="" />
                             </div>
                         </div>
                     </div>
                     <div className="item perforated decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p3Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
+                                <Image src={tankstructure4} alt="" />
                             </div>
                         </div>
                     </div>
                     <div className="item railing p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={p1Image} alt="" />
-                                <div className="btn_overlay">
-                                    <Link href="/portfolio" className="rounded">
-                                        See More
-                                    </Link>
-                                </div>
+                                <Image src={sheetwalls} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={sheetwall2} height={500} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofstructures4} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={scafolds} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofstructure6} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofing} height={500} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofing2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofstructures} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofstructure7} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={ozoh} height={500} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={engineer} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={metalworks} height="500" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={roofstructure7} height="500" />
                             </div>
                         </div>
                     </div>
@@ -273,9 +381,17 @@ export default function PortfolioPage() {
                                 <div className="col-md-3 mt-4">
                                     <div className="info_form ">
                                         <h5>Subscribe To Our Newsletter</h5>
-                                        <form action="">
-                                            <input type="email" placeholder="Enter Your Email" />
-                                            <button>
+                                        <div className="-mt-2 mb-4">
+                                            <p className="text-lg text-orange-500">{loading ? 'Please wait, Processing Email .....' : ''}</p>
+                                        </div>
+                                        <form action="" onSubmit={handleEmailSubmit}>
+                                            <input 
+                                                className="text-black" 
+                                                type="email" 
+                                                id="newsemail"
+                                                placeholder="Enter Your Email" 
+                                                onChange={(e) => setClientEmail({...clientEmail, newsemail:e.target.value})} />
+                                            <button type="submit">
                                                 <i className="fa fa-arrow-right" aria-hidden="true"></i>
                                             </button>
                                         </form>
