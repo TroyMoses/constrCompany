@@ -159,7 +159,7 @@ export default function HomePage() {
                         <Link href="www.facebook.com">
                             <i className="fa fa-facebook" aria-hidden="true"></i>
                         </Link>
-                        <Link href="www.whatsapp.com">
+                        <Link href="https://wa.me/256758156715">
                             <i className="fa fa-whatsapp" aria-hidden="true"></i>
                         </Link>
                         <Link href="www.instagram.com">
@@ -699,7 +699,7 @@ export default function HomePage() {
                                         </Link>
                                     </div>
                                     <div className="col-md-5">
-                                        <Link href="/" className="link-box">
+                                        <Link href="https://wa.me/256758156715" className="link-box">
                                             <i className="fa fa-phone" aria-hidden="true"></i>
                                             <span>
                                                 Call +256 772 174 100 or +256 758 156 715(Whatsapp)
