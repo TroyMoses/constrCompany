@@ -39,6 +39,10 @@ import roofing2 from '../public/assets/roofing2.jpg';
 import roofstructures from '../public/assets/roofstructures.jpg';
 import engineer from '../public/assets/engineer.jpg';
 import metalworks from '../public/assets/metalworks.jpg';
+import tanktour1 from '../public/assets/tank-tour.jpeg';
+import tanktour2 from '../public/assets/tank-tour2.jpeg';
+import tanktour3 from '../public/assets/tank-tour3.jpeg';
+import tanktour4 from '../public/assets/tank-tour4.jpeg';
 
 
 export default function PortfolioPage() {
@@ -172,6 +176,36 @@ export default function PortfolioPage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
+                                <Image src={tanktour1} alt="" height="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item facade p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={tanktour2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item perforated decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={tanktour3} height="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="item railing p-2">
+                        <div className="box">
+                            <div className="img-box">
+                                <Image src={tanktour4} alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="owl-carousel portfolio_carousel px-4 pb-4 md:flex">
+                    <div className="item decorative p-2">
+                        <div className="box">
+                            <div className="img-box">
                                 <Image src={tankstructure3} alt="" height={500} />
                             </div>
                         </div>
@@ -202,7 +236,7 @@ export default function PortfolioPage() {
                     <div className="item decorative p-2">
                         <div className="box">
                             <div className="img-box">
-                                <Image src={tankstructure} height={500} />
+                                <Image src={tankstructure} height="" />
                             </div>
                         </div>
                     </div>
